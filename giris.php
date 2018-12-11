@@ -1,40 +1,69 @@
-
 <?php
 		include("vtayar.php");
 	?>
-<html>
 
-<body>
-<div class="login-form"><!--login form-->
-						<h2>Hesabınıza Giriş Yapın</h2>
-						<form  name="form2" method="post">
-							<input type="text" placeholder="E-mail Adresiniz" name="txtmail2" id="txtmail2" />
-							<input type="password" placeholder="Şifreniz"  name="txtsifre2" id="txtsifre2"/>
-                                    <tr>
-                    <td><a href="unuttum.php" >Şifremi Unuttum</a>
-                    </td>
-                            <button type="submit" class="btn btn-default" name="btngiris" id="btngiris">Giriş Yap</button>
-						</form>
-					</div><!--/login form-->
-				</div>
 
-				<?php
 
-if(isset($_POST["btngiris"]))
+<form id="form1" name="form1" method="post" action=""><table border='1'>
+        <tr><td>E-MAİL:</td>
+            <td><input type="text" name="txtmail" id="txtmail" />
+            </td>
+        </tr>
+
+        <tr><td>ŞİFRE:</td>
+            <td><input type="password" name="txtsifre" id="txtsifre" />
+            </td>
+       <tr>
+	   <td><img src="capthca.php" style="border: 1px solid #525252"><br></td>
+		<td><input type="text" name="guvenlik" /> <br /></td>
+	    </tr>
+		
+        <tr>
+            <td><a href="unuttum.php" >Şifremi Unuttum</a>
+            </td>
+
+            <td>
+                <input type="submit" name="btnekle" id="btnekle" value="Giriş"  />
+            </tr>
+
+    </table>
+</form>
+
+
+    
+    <?php
+
+if(isset($_POST["btnekle"]))
 {
 
-    $mail=$_POST["txtmail2"];
-    $sifre=$_POST["txtsifre2"];
+    $mail=trim($_POST["txtmail"]);
+	$sifre=trim($_POST["txtsifre"]);
+	$guvenlik=trim($_POST["guvenlik"]);
+session_start();
+	if (isset($guvenlik)) {
+		if ($guvenlik == $_SESSION['kod']) {
+			
+
     $sorgu="SELECT * FROM musteri WHERE email='$mail' AND sifre='$sifre'";
     $tablo=$baglan->query($sorgu);
     $cek=$tablo->fetch(PDO::FETCH_ASSOC);
+
+
     if($tablo->rowCount()>0)
     {
         session_start();
         $_SESSION["id"]=$cek["id"];
+        header("location:profil.php");
 
-		header("location:profil.php");		
-    }
+		
+	}
+	else{
+
+		echo " HATALI HATASI";
+	}
+
+
+}
     else
 
 
@@ -42,10 +71,12 @@ if(isset($_POST["btngiris"]))
 
 }
 
-
+}
 
 ?>
 
-    </body>
+    
+ 
+  	
 
-</html>
+

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Giriş | Fi Optik </title>
+    <title>Üye Ol | Fi Optik </title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -131,8 +131,8 @@
 
 				<div class="col-sm-6">
 					<div class="signup-form"><!--sign up form-->
-						<h2>Kayıt Ol</h2>
-						<form name="form1" method="post">
+						<h2>Üye Ol</h2>
+						<form name="form1" method="post" >
 							<input type="text" placeholder="Adınız" name="txtad" id="txtad"/>
 							<input type="text" placeholder="Soyadınız" name="txtsoyad" id="txtsoyad"/>
 							<input type="email" placeholder="Email Adresiniz" name="txtmail" id="txtmail"/>
