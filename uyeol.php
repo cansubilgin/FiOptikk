@@ -137,6 +137,15 @@
 							<input type="text" placeholder="Soyadınız" name="txtsoyad" id="txtsoyad"/>
 							<input type="email" placeholder="Email Adresiniz" name="txtmail" id="txtmail"/>
 							<input type="password" placeholder="Şifreniz" name="txtsifre" id="txtsifre"/>
+							<input type="text" placeholder="Cep Telefonunuz" name="txttelefon" id="txttelefon"/>
+							<table>
+							<tr>
+							<td style="width:20%"><input type="checkbox" name="onay" style="width:20%" required=""/>  </td>
+							<td style="width:50%">Sartlari okudum ve kabul ediyorum</td>
+							</tr>
+							</table>
+
+							
 							<button type="submit" class="btn btn-default" name="btnekle" id="btnekle">Kaydol</button>
 						</form>
 					</div><!--/sign up form-->
@@ -153,6 +162,10 @@ if(isset($_POST["btnekle"]))
     $soyad=trim($_POST["txtsoyad"]);
     $mail=trim($_POST["txtmail"]);
 	$sifre=trim($_POST["txtsifre"]);
+	$telefon=trim($_POST["txttelefon"]);
+	
+
+
     $kontrolmail=filter_var($mail,FILTER_VALIDATE_EMAIL);
     if(!$kontrolmail){
         die("Mail Geçersiz");
@@ -160,17 +173,21 @@ if(isset($_POST["btnekle"]))
     }
 
 
-    $sorgu="INSERT INTO musteri(ad,soyad,sifre,email) VALUES('$ad','$soyad','$sifre','$mail')";
+    $sorgu="INSERT INTO musteri(ad,soyad,sifre,email,telefon) VALUES('$ad','$soyad','$sifre','$mail','$telefon')";
 
 
     if($baglan->query($sorgu))
     {
         echo "<br><span style='margin-left: 2%;'>$ad İSİMLİ ÜYE EKLENDİ</span>";
     }
-    else
+
+	
+	else
     {
         echo "<br><span style='margin-left: 2%;'>EKLEME SIRASINDA HATA OLUŞTU</span>";
-    }
+	}
+
+
 }
 
 
