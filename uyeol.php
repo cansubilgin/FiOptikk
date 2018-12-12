@@ -67,11 +67,13 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Hesabım</a></li>
+							<li><a href="profil.php"><i class="fa fa-user"></i> Hesabım</a></li>
 								<li><a href="#"><i class="fa fa-star"></i> Favorilerim</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Sepet </a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Giriş </a></li>
+								<li><a href="checkout.html">Checkout</a></li>
+								<li><a href="giris.php"><i class="fa fa-lock"></i> Giriş </a></li>
+								<li><a href="uyeol.php"><i class="fa fa-lock"></i> Üye Ol </a></li>
 							</ul>
 						</div>
 					</div>
@@ -100,7 +102,7 @@
 										<li><a href="product-details.html">Ürün Detayları</a></li> 
 										<li><a href="checkout.html">Checkout</a></li> 
 										<li><a href="cart.html">Sepet</a></li> 
-										<li><a href="login.html">Giriş</a></li> 
+										 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>

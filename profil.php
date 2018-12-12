@@ -9,7 +9,7 @@ if(!isset($_SESSION["id"])){
 ?>
 <?php
     include("vtayar.php");
-?>s
+?>
 <html>
     <body>
         
@@ -31,7 +31,8 @@ echo "<tr>
 		
 		<td>AD</td>
 		<td>SOYAD</td>
-		<td>MAİL</td>		
+		<td>MAİL</td>
+		<td>TELEFON</td>		
 		<td>GÜNCELLE</td>				
 	</tr>";
 
@@ -43,6 +44,8 @@ echo "<tr>
 	<td>" . $kayit["ad"] . "</td>
 	<td>" . $kayit["soyad"] . "</td>
 	<td>" . $kayit["email"] . "</td>
+	<td>" . $kayit["telefon"] . "</td>
+
 <td>".$guncellelink."</td>
 	</tr>";
 

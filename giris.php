@@ -59,7 +59,7 @@ session_start();
 	}
 	else{
 
-		echo " HATALI HATASI";
+		echo " HATALIS HATASI";
 	}
 
 
