@@ -1,16 +1,20 @@
 <?php
-		include("vtayar.php");
-	?>
+	include("vtayar.php");
+	session_start();
+	ob_start();
+?>
+
+
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Üye Ol | Fi Optik </title>
+    <title>Hesap Bilgilerini Güncelle | Fi Optik</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="sstylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/price-range.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
@@ -35,19 +39,19 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href=""><i class="fa fa-phone"></i> +90 000 000 00 00</a></li>
-								<li><a href=""><i class="fa fa-envelope"></i> info@domain.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +90 000 000 00 00</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="social-icons pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-facebook"></i></a></li>
-								<li><a href=""><i class="fa fa-twitter"></i></a></li>
-								<li><a href=""><i class="fa fa-linkedin"></i></a></li>
-								<li><a href=""><i class="fa fa-dribbble"></i></a></li>
-								<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -67,9 +71,9 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-							<li><a href="hesabım.php"><i class="fa fa-user"></i> Hesabım</a></li>
+								<li><a href="hesabım.php"><i class="fa fa-user"></i> Hesabım</a></li>
 								<li><a href="#"><i class="fa fa-star"></i> Favorilerim</a></li>
-
+								
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Sepet </a></li>
 								<li><a href="checkout.html">Checkout</a></li>
 								<li><a href="giris.php"><i class="fa fa-lock"></i> Giriş </a></li>
@@ -95,26 +99,41 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Anasayfa</a></li>
-								<li class="dropdown"><a href="#">Mağaza<i class="fa fa-angle-down"></i></a>
+                            <li class="dropdown"><a href="#">Üyelik Bilgilerim<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Ürünler</a></li>
-										<li><a href="product-details.html">Ürün Detayları</a></li> 
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Sepet</a></li> 
-										 
-                                    </ul>
-                                </li> 
-								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
-                                </li> 
-								<li><a href="404.html">404</a></li>
-								<li><a href="contact-us.html">İletişim</a></li>
+                                        <li><a href="girisbilgileriniguncelle.php"> Giriş Bilgilerimi Güncelle</a></li>
+										<li><a href="hesapbilgilerimiguncelle.php">Hesap Bilgilerimi Güncelle</a></li> 
+	                              
 							</ul>
 						</div>
+                        <div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+                            <li class="dropdown"><a href="siparislerim.php">Siparişlerim<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="siparisdetay.php"> Sipariş Detayları</a></li>
+										
+	                              
+							</ul>
+						</div>
+                        <div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+                            <li class="dropdown"><a href="#">Adreslerim<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="adresbilgileriniguncelle.php"> Adres Bilgilerini Güncelleme</a></li>
+										
+							</ul>
+						</div>
+                        <div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+                            <li class="dropdown"><a href="#">Favorilerim<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                     
+							</ul>
+						</div>
+
+
+
+
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
@@ -126,81 +145,82 @@
 		</div><!--/header-bottom-->
 	</header><!--/header-->
 	
-	<section id="form"><!--form-->
-		<div class="container">
+    <div class="container" style="height:500px">
 			<div class="row">
-				<div class="col-sm-6 col-sm-offset-1">
+				<div class="col-sm-12">
 
-				<div class="col-sm-6">
-					<div class="signup-form"><!--sign up form-->
-						<h2>Üye Ol</h2>
-						<form name="form1" method="post" >
-							<input type="text" placeholder="Adınız" name="txtad" id="txtad"/>
-							<input type="text" placeholder="Soyadınız" name="txtsoyad" id="txtsoyad"/>
-							<input type="email" placeholder="Email Adresiniz" name="txtmail" id="txtmail"/>
-							<input type="password" placeholder="Şifreniz" name="txtsifre" id="txtsifre"/>
-							<input type="text" placeholder="Cep Telefonunuz" name="txttelefon" id="txttelefon"/>
-							<input type="text" placeholder="Adresiniz" name="txtadres" id="txtadres"/>
-							<input type="text" placeholder="İliniz" name="txtil" id="txtil"/>
-							<input type="text" placeholder="İlçeniz" name="txtilce" id="txtilce"/>
-							
-							<table>
-							<tr>
-							<td style="width:20%"><input type="checkbox" name="onay" style="width:20%" required=""/>  </td>
-							<td style="width:50%">Sartlari okudum ve kabul ediyorum</td>
-							</tr>
-							</table>
+<?PHP
 
-							
-							<button type="submit" class="btn btn-default" name="btnekle" id="btnekle">Kaydol</button>
-						</form>
-					</div><!--/sign up form-->
-				</div>
-			</div>
-		</div>
-	</section><!--/form-->
-
-
-	<?PHP
-if(isset($_POST["btnekle"]))
+if(isset($_POST["btnguncelle"]))
 {
-    $ad=trim($_POST["txtad"]);
-    $soyad=trim($_POST["txtsoyad"]);
-    $mail=trim($_POST["txtmail"]);
-	$sifre=trim($_POST["txtsifre"]);
-	$telefon=trim($_POST["txttelefon"]);
-	$adres=trim($_POST["txtadres"]);
-	$il=trim($_POST["txtil"]);
-	$ilce=trim($_POST["txtilce"]);
-	
+    $id=$_GET["guncelleid"];
 
+    $ad=$_POST["txtad"];
+    $soyad=$_POST["txtsoyad"];
+ 
+    $adres=$_POST["txtadres"];
+    $telefon=$_POST["txttelefon"];
 
-    $kontrolmail=filter_var($mail,FILTER_VALIDATE_EMAIL);
-    if(!$kontrolmail){
-        die("Mail Geçersiz");
-
-    }
-
-
-    $sorgu="INSERT INTO musteri(ad,soyad,sifre,email,telefon,adres,il,ilce) VALUES('$ad','$soyad','$sifre','$mail','$telefon','$adres','$il','$ilce')";
-
+   
+        $sorgu="UPDATE musteri SET ad='$ad',soyad='$soyad',telefon='$telefon',adres='$adres' WHERE id=$id";
+    
 
     if($baglan->query($sorgu))
     {
-        echo "<br><span style='margin-left: 2%;'>$ad İSİMLİ ÜYE EKLENDİ</span>";
+        echo "<br><span style='margin-left: 2%;'>$ad İSİMLİ ÜYE GÜNCELLENDİ</span>";
     }
-
-	
-	else
+    else
     {
-        echo "<br><span style='margin-left: 2%;'>EKLEME SIRASINDA HATA OLUŞTU</span>";
-	}
-
-
+        echo "<br><span style='margin-left: 2%;'>GÜNCELLEME SIRASINDA HATA OLUŞTU !</span>";
+    }
 }
 
 
+$id=$_SESSION["id"];
+$secsorgu="SELECT * FROM musteri WHERE id=$id";
+$tablo=$baglan->query($secsorgu);
+$kayit=$tablo->fetch();
+
 ?>
+					
+
+
+<form id="form1" name="form1" method="post" enctype="multipart/form-data" action=""><table border='1'>
+        
+<tr>
+            <td>  AD:</td>
+
+            <td>     <input type="text" name="txtad" id="txtad" value="<?php echo $kayit["ad"]; ?>" /></td>
+
+        </tr>
+        <tr><td>SOYAD: </td>
+
+            <td>   <input type="text" name="txtsoyad" id="txtsoyad" value="<?php echo $kayit["soyad"]; ?>" /></td>
+
+        </tr>
+        
+        <tr><td>TELEFON:</td>
+            <td><input type="text" name="txttelefon" id="txttelefon" value="<?php echo $kayit["telefon"]; ?>" />
+            </td>
+        </tr>
+        <tr><td>ADRES:</td>
+            <td><input type="text" name="txtadres" id="txtadres" value="<?php echo $kayit["adres"]; ?>" />
+            </td>
+        </tr>
+        <tr><td colspan="2">
+                <input type="submit" name="btnguncelle" id="btnguncelle" value="GÜNCELLE"  />
+            </td></tr>
+
+    </table>
+</form>
+
+   
+
+					
+				</div>
+			</div>
+		</div>			
+			
 	
 	<footer id="footer"><!--Footer-->
 		<div class="footer-top">
@@ -363,9 +383,9 @@ if(isset($_POST["btnekle"]))
 
   
     <script src="js/jquery.js"></script>
-	<script src="js/price-range.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/price-range.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
 </body>

@@ -1,9 +1,11 @@
 <?php
-    include("vtayar.php")
+    include("vtayar.php");
+    
+    
 ?>
 <html>
 <body>
-<a href="profil.php">Profil</a>
+<a href="hesabım.php">Profil</a>
 <a href="cikis.php">Çıkış</a>
 <?PHP
 
@@ -14,9 +16,11 @@ if(isset($_POST["btnguncelle"]))
     $soyad=$_POST["txtsoyad"];
     $sifre=$_POST["txtsifre"];
     $mail=$_POST["txtmail"];
+    $adres=$_POST["txtadres"];
+    $telefon=$_POST["txttelefon"];
 
    
-        $sorgu="UPDATE musteri SET ad='$ad',soyad='$soyad',sifre='$sifre',email='$mail' WHERE id=$id";
+    $sorgu="UPDATE musteri SET ad='$ad',soyad='$soyad',sifre='$sifre',email='$mail', telefon='$telefon',adres='$adres' WHERE id=$id";
     
 
     if($baglan->query($sorgu))
@@ -51,13 +55,20 @@ $kayit=$tablo->fetch();
 
         </tr>
         
-
         <tr><td>ŞİFRE:</td>
             <td><input type="password" name="txtsifre" id="txtsifre" value="<?php echo $kayit["sifre"]; ?>"/>
             </td>
         </tr>
         <tr><td>MAİL:</td>
             <td><input type="text" name="txtmail" id="txtmail" value="<?php echo $kayit["email"]; ?>" />
+            </td>
+        </tr>
+        <tr><td>TELEFON:</td>
+            <td><input type="text" name="txttelefon" id="txttelefon" value="<?php echo $kayit["telefon"]; ?>" />
+            </td>
+        </tr>
+        <tr><td>ADRES:</td>
+            <td><input type="text" name="txtadres" id="txtadres" value="<?php echo $kayit["adres"]; ?>" />
             </td>
         </tr>
         <tr><td colspan="2">

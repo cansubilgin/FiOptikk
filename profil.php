@@ -32,7 +32,8 @@ echo "<tr>
 		<td>AD</td>
 		<td>SOYAD</td>
 		<td>MAİL</td>
-		<td>TELEFON</td>		
+		<td>TELEFON</td>	
+		<td>ADRES</td>	
 		<td>GÜNCELLE</td>				
 	</tr>";
 
@@ -45,6 +46,7 @@ echo "<tr>
 	<td>" . $kayit["soyad"] . "</td>
 	<td>" . $kayit["email"] . "</td>
 	<td>" . $kayit["telefon"] . "</td>
+	<td>" . $kayit["adres"] . "</td>
 
 <td>".$guncellelink."</td>
 	</tr>";
